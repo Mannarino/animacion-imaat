@@ -1,0 +1,247 @@
+html{
+	height: 100%;
+}
+body{
+	background-color: #212F38;
+	height: 100%;
+	font-family: sans-serif;
+	color:#6e777d;
+	box-sizing: border-box;
+}
+.centro{
+	display: flex;
+	align-items: center;
+	height: 100%;
+	max-width: 510px;
+	margin: auto;
+	position: relative;
+}
+
+/*parte izquierda de la marca*/
+.marca{
+	height:300px;
+	width: 250px;	
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+	.logo{
+		width: 220px;
+		height: auto;
+		position: relative;
+		top: -10px;
+	}
+	.marca .logo img{
+		width: 40px;
+		height: 40px;
+		display: block;
+	}
+	.parrafo{
+		width: 200px;
+		font-size: 10px;
+		margin: 0;
+	}
+	.linea{
+		width: 230px;
+		height: 1px;
+		background-color: #6e777d;
+		margin: 20px 0px;
+	}
+/*fin parte izquierda de la marca*/ 
+
+/*parte derecha formulario*/
+.formulario{
+	height: 300px;
+	width: 250px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;	
+}
+	.formulario h3{
+		color:#e53825;
+		margin-top: 0px;
+		margin-bottom: 18px;
+	}
+	input,textarea,button{
+		padding: 6px 10px;
+		margin-bottom: 5px;
+		border:0px;
+		width: 210px;
+		font-family: 'Roboto', sans-serif;
+	}
+	button{
+		background-color: #ee3825;
+		padding: 10px 20px;
+		color: #fff;
+		font-size: 12px;
+		width: 100px;
+		margin-bottom: 10px;
+	}
+	textarea{
+		height: 70px;
+		resize: none;
+	}
+/*fin parte derecha formulario*/
+.ojo{
+	position: relative;
+}
+
+/* ojos de kinoto*/
+.cerrar-ojos{
+	animation-name: cerrar-ojos;
+	animation-duration:10s;
+	animation-iteration-count: infinite;
+	transform-origin: 50% 50%;
+}
+.rotar-ojos{
+	animation-name: rotar-ojos;
+	animation-duration: 12s;
+	animation-iteration-count:  infinite;
+}
+@keyframes cerrar-ojos{
+	0%{
+		transform: scale(1);	
+	}
+	69%{
+		transform: scale(1);
+	}
+	70%{
+		transform: scale(0.6);
+	}
+	80%{
+		transform: scale(0);
+	}
+	85%{
+		transform: scale(1);
+	}
+}
+@keyframes rotar-ojos{
+	0%{
+		transform: rotateY(0deg);
+	}
+	80%{
+		transform: rotateY(15deg);
+	}
+}
+
+
+/* mover brazo de kinoto*/
+.brazo{
+	animation-name: mover-brazo;
+	animation-duration: 6s;
+	animation-iteration-count: infinite;
+	animation-delay: 1s;
+	transform-origin: 50% 50%;
+}
+@keyframes mover-brazo{
+	0%{
+		transform: rotate(0deg);
+	}
+	70%{
+		transform: rotate(30deg);
+		transform: translate(-1px, -10px);
+	}
+	85%{
+		transform: rotate(0deg);
+	}
+}
+
+
+/* posicion y movimiento de kinoto */
+.contenedorKinoto{
+	position: absolute;
+	right: -120px;
+}
+.mover-kinoto{
+	animation-name: mover-kinoto;
+	animation-duration: 100s;
+	animation-iteration-count: infinite;
+}
+@keyframes mover-kinoto{
+	0%{
+		bottom: 230px;
+	}
+	20%{
+		bottom: 30px;
+	}
+	40%{
+		right: 3px;
+	}
+	50%{
+		right: 300px;
+	}
+	60%{
+		right: 530px;
+		bottom: 0px;
+	}
+	70%{
+		bottom: 80px;
+	}
+	80%{
+		bottom: 460px;
+		right: 530px;
+	}
+	90%{
+		bottom: 460px;
+		right: -100px;
+	}
+	100%{
+		bottom: 230px;
+		right: -116px;
+	}
+}
+
+/* diseño responsive */
+
+@media only screen and (max-width: 600px) {
+    .centro{
+    	display: block;
+    }
+    .marca{
+	height:300px;
+	width: 90%;	
+	margin: 6px;
+	display: block;
+	/*display: flex;
+	justify-content: space-between;
+	flex-direction: column;*/
+	}
+	.logo{
+		width: 90%;
+		height: auto;
+		position: static;
+		margin: auto;
+		margin-bottom: 30px;
+		/*position: relative;
+		top: -10px;*/
+	}
+	.marca .logo img{
+		width: 60px;
+		height: 60px;
+		margin: auto;
+		display: block;
+	}
+	.parrafo{
+		width: 190px;
+		font-size: 12px;
+	}
+	.linea{
+		width: 190px;
+	}
+	.contenedorKinoto{
+		position: absolute;
+		right: 60px;
+		top: 80px;
+	}
+
+	.formulario{
+		text-align: center;
+		width: 90%;
+		margin: auto;
+		margin-bottom: 30px;
+	}
+	input,textarea,button{
+		margin: auto;	
+	}
+	
+}
